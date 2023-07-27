@@ -23,7 +23,7 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 
 @KeycloakConfiguration //Configuration spécifique à Keycloak
 @Import(KeycloakSpringBootConfigResolver.class) //Importe la configuration de Keycloak pour Spring Boot
-@EnableWebSecurity //Active la sécurisation des méthodes avec les annotations JSR-250 (par exemple, @RolesAllowed)
+@EnableWebSecurity //Active la sécurisation des méthodes avec les annotations JSR-250 (par exemple, @RolesAllowed) : ajouter @RolesAllowed({"employee","admin"})
 @EnableGlobalMethodSecurity(jsr250Enabled = true)
 public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 	
