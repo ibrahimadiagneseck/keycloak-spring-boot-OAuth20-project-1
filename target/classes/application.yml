@@ -13,7 +13,7 @@ keycloak:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/keycloak_spring_boot_project_2?allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/keycloak-spring-boot-OAuth20-project-1?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: root
     hikari:

@@ -1,5 +1,7 @@
 package com.javapuzzle.springbootkeycloakexample.configuration;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
@@ -68,8 +70,8 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		// Définit des règles d'autorisation basées sur les URL
-		             .antMatchers("/admin/*").hasRole("admin")
-		             .antMatchers("/user/*").hasRole("employee")
+		             // .antMatchers("/admin/*").hasRole("admin") // ajouter @RolesAllowed({"employee","admin"})
+		             // .antMatchers("/user/*").hasRole("employee") // ajouter @RolesAllowed({"employee","admin"})
 		.anyRequest().permitAll(); // Autorise toutes les autres requêtes sans authentification
 
 		// Désactive la protection CSRF (Cross-Site Request Forgery)
