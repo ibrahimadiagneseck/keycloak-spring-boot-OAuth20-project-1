@@ -1,0 +1,26 @@
+# https://www.youtube.com/watch?v=Kg6VjlFQfUs
+
+server:
+  port: 8081
+
+keycloak:
+  realm: javapuzzle
+  auth-server-url: http://localhost:8080
+  resource: spring-boot-keycloak-example
+  public-client: true
+  bearer-only: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/keycloak_spring_boot_project_2?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: root
+    hikari:
+      initialization-fail-timeout: 0
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
